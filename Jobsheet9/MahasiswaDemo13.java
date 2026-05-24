@@ -60,12 +60,7 @@ public class MahasiswaDemo13 {
                     }
                     break;
                 case 6:
-                    int jmlTugas = stack.totalTugas();
-                    if (jmlTugas > 0) {
-                        System.out.println("Jumlah tugas saat ini adalah " + jmlTugas);
-                    } else {
-                        System.out.println("Tidak ada tugas yang dikumpulkan.");
-                    }
+                    System.out.println("Jumlah tugas yang dikumpulkan: " + stack.count());
                     break;
                 default:
                     System.out.println("Pilihan tidak valid");
