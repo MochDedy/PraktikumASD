@@ -14,6 +14,8 @@ public class MahasiswaDemo13 {
             System.out.println("2. Menilai Tugas");
             System.out.println("3. Melihat Tugas Teratas");
             System.out.println("4. Melihat Daftar Tugas");
+            System.out.println("5. Melihat Tugas Terbawah");
+            System.out.println("6. Total Tugas");
             System.out.print("Pilih: ");
             pilih = sc.nextInt();
             sc.nextLine();
@@ -26,7 +28,7 @@ public class MahasiswaDemo13 {
                     String nim = sc.nextLine();
                     System.out.print("Kelas: ");
                     String kelas = sc.nextLine();
-                    Mahasiswa13 mhs = new Mahasiswa13 (nama, nim, kelas, 0);
+                    Mahasiswa13 mhs = new Mahasiswa13(nama, nim, kelas, 0);
                     stack.push(mhs);
                     System.out.printf("Tugas %s berhasil dikumpulkan\n", mhs.nama);
                     break;
@@ -51,10 +53,24 @@ public class MahasiswaDemo13 {
                     System.out.println("Nama\t NIM\t Kelas");
                     stack.print();
                     break;
+                case 5:
+                    Mahasiswa13 terbawah = stack.peek2();
+                    if (terbawah != null) {
+                        System.out.println("Tugas pertama kali dikumpulkan oleh " + terbawah.nama);
+                    }
+                    break;
+                case 6:
+                    int jmlTugas = stack.totalTugas();
+                    if (jmlTugas > 0) {
+                        System.out.println("Jumlah tugas saat ini adalah " + jmlTugas);
+                    } else {
+                        System.out.println("Tidak ada tugas yang dikumpulkan.");
+                    }
+                    break;
                 default:
-                    System.out.println("Pilihan tdak valid");
+                    System.out.println("Pilihan tidak valid");
             }
 
-        } while (pilih >= 1 && pilih <= 4);
+        } while (pilih >= 1 && pilih <= 6);
     }
 }
