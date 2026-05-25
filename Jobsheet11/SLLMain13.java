@@ -1,5 +1,7 @@
 package Jobsheet11;
 
+import java.util.Scanner;
+
 public class SLLMain13 {
     public static void main(String[] args) {
         SingleLinkedList13 sll = new SingleLinkedList13();
@@ -16,5 +18,26 @@ public class SLLMain13 {
         sll.insertAfter("Dirga", mhs3);
         sll.insertAt(2, mhs2);
         sll.print();
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Masukkan jumlah mahasiswa yang ingin ditambahkan: ");
+        int n = Integer.parseInt(sc.nextLine());
+
+        for (int i = 0; i < n; i++) {
+            System.out.println("-- Mahasiswa ke-" + (i + 1) + " --");
+            System.out.print("Nama  : ");
+            String nama = sc.nextLine();
+            System.out.print("NIM   : ");
+            String nim = sc.nextLine();
+            System.out.print("Kelas : ");
+            String kelas = sc.nextLine();
+            System.out.print("IPK   : ");
+            double ipk = Double.parseDouble(sc.nextLine());
+
+            Mahasiswa13 mhsBaru = new Mahasiswa13(nama, nim, kelas, ipk);
+            sll.addLast(mhsBaru);
+            sll.print();
+        }
+        sc.close();
     }
 }
