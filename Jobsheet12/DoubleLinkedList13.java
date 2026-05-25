@@ -74,16 +74,42 @@ public class DoubleLinkedList13 {
     }
 
     public void printReverse() {
-    if (isEmpty()) {
-        System.out.println("Linked List masih kosong.");
-        return;
+        if (isEmpty()) {
+            System.out.println("Linked List masih kosong.");
+            return;
+        }
+        System.out.println("===== TAMPIL DATA TERBALIK =====");
+        Node13 current = tail;
+        while (current != null) {
+            current.data.tampil();
+            System.out.println("----------");
+            current = current.prev;
+        }
     }
-    System.out.println("===== TAMPIL DATA TERBALIK =====");
-    Node13 current = tail;
-    while (current != null) {
-        current.data.tampil();
-        System.out.println("----------");
-        current = current.prev;
+
+    public void removeFirst() {
+        if (isEmpty()) {
+            System.out.println("Linked List kosong.");
+            return;
+        }
+        if (head == tail) {
+            head = tail = null;
+        } else {
+            head = head.next;
+            head.prev = null;
+        }
     }
-}
+
+    public void removeLast() {
+        if (isEmpty()) {
+            System.out.println("Linked List kosong.");
+            return;
+        }
+        if (head == tail) {
+            head = tail = null;
+        } else {
+            tail = tail.prev;
+            tail.next = null;
+        }
+    }
 }
