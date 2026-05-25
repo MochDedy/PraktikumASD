@@ -19,6 +19,19 @@ public class SLLMain13 {
         sll.insertAt(2, mhs2);
         sll.print();
 
+        System.out.print("data index 1 : \n");
+        sll.getData(1);
+
+        System.out.println("data mahasiswa an Bimon berada pada index : " + sll.indexOf("bimon"));
+        System.out.println();
+
+        sll.removeFirst();
+        sll.removeLast();
+        sll.print();
+
+        sll.removeAt(0);
+        sll.print();
+        
         Scanner sc = new Scanner(System.in);
         System.out.print("Masukkan jumlah mahasiswa yang ingin ditambahkan: ");
         int n = Integer.parseInt(sc.nextLine());
